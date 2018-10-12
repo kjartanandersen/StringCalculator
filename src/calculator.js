@@ -1,12 +1,12 @@
-function add(number) {
-	if (number == "") {
+function add(numbers) {
+	if (numbers == "") {
 		return 0;
 	}
-	if (number.includes(",")) {
-		var numberArr = number.split(",");
+	if (numbers.includes(",")) {
+		var numberArr = numbers.split(",");
 		return parseInt(numberArr[0]) + parseInt(numberArr[1]);
 	}
-	return parseInt(number);
+	return parseInt(numbers);
 }
 
 module.exports = add;
