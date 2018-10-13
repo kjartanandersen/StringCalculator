@@ -8,14 +8,15 @@ function add(numbers) {
 		var isNegative = false;
 		var msg = "Negatives not allowed: ";
 		for (var i = 0; i < numberArr.length; i++) {
-			if (numberArr[i] < 0) {
+			if (numberArr[i] <= 1000) {
+				if (numberArr[i] < 0) {
 				msg += numberArr[i] + ",";
 				isNegative = true;
-			}
-			if (numberArr[i] != undefined && isNegative == false) {
+				}
+				if (numberArr[i] != undefined && isNegative == false) {
 				ret += parseInt(numberArr[i]);
+				}
 			}
-			
 		}
 		if (isNegative == false) {
 			return ret;
