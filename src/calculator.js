@@ -4,9 +4,12 @@ function add(numbers) {
 	}
 	if (numbers.includes(",")) {
 		var ret = 0;
-		var numberArr = numbers.split(",");
+		var numberArr = numbers.split(/[\n,]/);
 		for (var i = 0; i < numberArr.length; i++) {
-			ret += parseInt(numberArr[i]);
+			if (numberArr[i] !== undefined) {
+				ret += parseInt(numberArr[i]);
+			}
+			
 		}
 		return ret;
 	}

@@ -27,3 +27,16 @@ it ("Should return sum of five given numbers", () => {
 it ("Should return sum of six given numbers", () => {
 	expect(add("1,2,3,4,5,6")).toBe(21);
 }); 
+
+it ("Should handle new lines between numbers ", () => {
+	expect(add("1\n2,3")).toBe(6);
+}); 
+
+it ("Should handle new lines between numbers ", () => {
+	expect(add("1\n2,3\n4,5\n6")).toBe(21);
+}); 
+
+it ("Should be invalid ", () => {
+	expect(add("1,\n")).toBe(NaN);
+}); 
+
