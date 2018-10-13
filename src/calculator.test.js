@@ -40,3 +40,20 @@ it ("Should be invalid ", () => {
 	expect(add("1,\n")).toBe(NaN);
 }); 
 
+it ("Should be invalid ", () => {
+	expect(add("1,\n")).toBe(NaN);
+}); 
+
+it ("Throws on negative input", () => {
+  function negativeAdd() {
+    add("-1,2");
+  }
+  expect(negativeAdd).toThrowError('Negatives not allowed: -1');
+});
+
+it ("Throws on negative input", () => {
+  function negativeAdd() {
+    add("2,-4,3,-5");
+  }
+  expect(negativeAdd).toThrowError('Negatives not allowed: -4,-5');
+});
