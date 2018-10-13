@@ -61,3 +61,7 @@ it ("Throws on negative input", () => {
 it ("Should ignore numbers bigger than 1000 ", () => {
 	expect(add("1001,2")).toBe(2);
 }); 
+
+it ("Should be able to handle different delimiters ", () => {
+	expect(add("//;\n1;2")).toBe(3);
+}); 

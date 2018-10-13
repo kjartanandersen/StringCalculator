@@ -2,9 +2,22 @@ function add(numbers) {
 	if (numbers == "") {
 		return 0;
 	}
-	if (numbers.includes(",")) {
+	var del;
+	var isCustomDel = false;
+	if (numbers.substring(0,2) == "//") {
+		del = [numbers[2]];
+		isCustomDel = true;
+	}
+	else {
+		del = [","];
+	}
+	if (numbers.includes(del[0])) {
+		del.push("\n");
 		var ret = 0;
-		var numberArr = numbers.split(/[\n,]/);
+		if (isCustomDel) {
+			numbers = numbers.substring(4,numbers.length);
+		}
+		var numberArr = numbers.split(new RegExp(del.join('|'), 'g'));
 		var isNegative = false;
 		var msg = "Negatives not allowed: ";
 		for (var i = 0; i < numberArr.length; i++) {
